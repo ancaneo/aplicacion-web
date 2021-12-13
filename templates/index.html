@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="static/index.css"/>
+    </head>
+    <body>
+        <nav>
+            Menu
+        </nav>
+        <div id="planes-container">
+            <image id="base-plane" class="plane-img" src="resources/mapa.png"/>
+            <image id="wildfire-layer" class="plane-img" src="resources/wildfires.png"/>
+        </div>
+        <div>
+            <input type="datetime-local" class="datetime" id="start-input"/>
+            <div id="dates-filter" class="slider">
+                <div>
+                    <div id="background-left" class="background"></div>
+                    <div id="background-right" class="background"></div>
+                    <div id="range"></div>
+                    <span class="thumb" id="start-thumb"></span>
+                    <span class="thumb" id="end-thumb"></span>
+                </div>
+                <input id="start-filter" type="range" z-index="1" value="30" max="100" min="0" step="1"/>
+                <input id="end-filter" type="range" z-index="1" value="60" max="100" min="0" step="1"/>
+            </div>
+            <input type="datetime-local" class="datetime" id="end-input"/>
+        </div>
+        <script src="static/index.js"></script>
+    </body>
+</html>
