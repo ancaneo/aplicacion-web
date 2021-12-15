@@ -1,30 +1,61 @@
-<html>
-    <head>
-        <link rel="stylesheet" href="static/index.css"/>
-    </head>
-    <body>
-        <nav>
-            Menu
-        </nav>
-        <div id="planes-container">
-            <image id="base-plane" class="plane-img" src="resources/mapa.png"/>
-            <image id="wildfire-layer" class="plane-img" src="resources/wildfires.png"/>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="static/index.css" />
+    <title>Wildfire App</title>
+  </head>
+  <body>
+    <div class="app">
+      <header class="app__navbar">
+        <span class="material-icons menu-button">menu</span>
+      </header>
+      <main class="app__main">
+        <div class="canvas-group">
+          <canvas id="canvas-map" width="970" height="540"></canvas>
+          <canvas id="canvas-points" width="970" height="540"></canvas>
         </div>
-        <div>
-            <input type="datetime-local" class="datetime" id="start-input"/>
-            <div id="dates-filter" class="slider">
-                <div>
-                    <div id="background-left" class="background"></div>
-                    <div id="background-right" class="background"></div>
-                    <div id="range"></div>
-                    <span class="thumb" id="start-thumb"></span>
-                    <span class="thumb" id="end-thumb"></span>
-                </div>
-                <input id="start-filter" type="range" z-index="1" value="30" max="100" min="0" step="1"/>
-                <input id="end-filter" type="range" z-index="1" value="60" max="100" min="0" step="1"/>
-            </div>
-            <input type="datetime-local" class="datetime" id="end-input"/>
+      </main>
+      <div class="app__controls">
+        <input type="datetime-local" class="datetime" id="start-input" />
+        <div id="dates-filter" class="slider">
+          <div>
+            <div id="background-left" class="background"></div>
+            <div id="background-right" class="background"></div>
+            <div id="range"></div>
+            <span class="thumb" id="start-thumb"></span>
+            <span class="thumb" id="end-thumb"></span>
+          </div>
+          <input
+            id="start-filter"
+            type="range"
+            z-index="1"
+            value="30"
+            max="100"
+            min="0"
+            step="1"
+          />
+          <input
+            id="end-filter"
+            type="range"
+            z-index="1"
+            value="60"
+            max="100"
+            min="0"
+            step="1"
+          />
         </div>
-        <script src="static/index.js"></script>
-    </body>
+        <input type="datetime-local" class="datetime" id="end-input" />
+      </div>
+    </div>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="static/index.js"></script>
+  </body>
 </html>
