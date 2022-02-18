@@ -23,6 +23,7 @@ def get_wildfires():
     path = "resources/wildfires.png"
     if not os.path.exists(path):
         path = "https://maps.wild-fire.eu/gwis?LAYERS0LES=&SRS=EPSG:4326&BBOX=-180.0,-90.0,180.0,90.0&WIDTH=1600&HEIGHT=1200&TIME=2021-12-11/2021-12-12"
+        requests.get(path)
 
     with Image.open(path) as img:
         array_of_coordinates = []
