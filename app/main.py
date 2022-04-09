@@ -53,3 +53,10 @@ def get_types(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
 @app.post("/types", response_model=schemas.Type)
 def create_type(type: schemas.TypeCreate, db: Session = Depends(get_db)):
     return crud.create_type(db, type)
+
+@app.post("/database")
+def feed_database(db: Session = Depends(get_db)):
+    # TODO: get data from api and feed the database with real data
+    fake_disaster = schemas.DisasterCreate(name="Natural Disaster", latitude=1.8, longitude=1.9, type_id=1)
+
+    crud.create_disaster(db, fake_disaster)

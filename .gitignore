@@ -3,4 +3,6 @@ venv
 
 sql_app.db
 
+celerybeat-schedule
+
 __pycache__
