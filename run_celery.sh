@@ -1,0 +1,1 @@
+celery -A tasks.main worker -B --loglevel=INFO
