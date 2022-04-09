@@ -14,4 +14,4 @@ def setup_periodic_tasks(sender, **kwargs):
 
 @app.task
 def hello():
-    requests.post("http://localhost:8000/database")
+    requests.post("http://127.0.0.1:8000/database")
